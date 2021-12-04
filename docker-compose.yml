@@ -1,0 +1,36 @@
+version: '3.8'
+services:
+  backend:
+    container_name: stocks_microservices
+    build:
+      context: .
+      dockerfile: Dockerfile
+    #command: 'gunicorn stocks_microservices.wsgi:application --bind 0.0.0.0:8000'
+    command: 'python manage.py runserver 0.0.0.0:8000'
+    ports:
+      - 8000:8000
+    volumes:
+      - .:/app
+    depends_on:
+      - stocks_microservices_pgdb
+  queue:
+    container_name: stocks_microservices_queue
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: 'python consumer.py'
+    depends_on:
+      - stocks_microservices_pgdb
+  stocks_microservices_pgdb:
+    image: postgres:13
+    container_name: stocks_microservices_pgdb
+    environment:
+      - POSTGRES_DB=${DB_NAME}
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+    ports:
+      - 5432:5432
+    volumes:
+      - pgdb_data:/var/lib/postgres/data
+volumes:
+    pgdb_data:
