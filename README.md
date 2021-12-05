@@ -24,13 +24,14 @@ To aplication works, is need:
 - 1x Postgres database instance.
 - 1x RabbitMQ instance.
 
-Here, you will create main microsservices, database and rabbitmq. Remember change tag "yourname"!.
+Here, you will create main microsservices, database and rabbitmq. 
+
+Warning: Remember change tag "yourname"!.
 
 First, create the main stock microservices:
 
   **Heroku commands to stock microservices:**
-  Warning: Change stock-ms-pytrader to you appname
-
+  
   Create app container:
   ```
   heroku create stock-ms-yourname
