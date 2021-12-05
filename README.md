@@ -19,7 +19,7 @@ heroku container: login
 ```
 To aplication works, is need:
 
-- 1x stock microservices.
+- 1x stock microservices. (https://github.com/mborcari/stock_microservices)
 - 2x stock etl microservices (https://github.com/mborcari/stock_etl_microservices)
 - 1x Postgres database instance.
 - 1x RabbitMQ instance.
@@ -61,7 +61,7 @@ First, create the main stock microservices:
   DATABASE_URL=<get on heroku site after create postgres instance>
 
   #RABBITMQ
-  RABBITMQ_KEY=get on heroku site afeter create RabbiwMQ instance>
+  RABBITMQ_KEY=get on heroku site after create RabbiwMQ instance>
   ```
  
   Now, build image and deploy on Heroku app:
