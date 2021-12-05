@@ -9,7 +9,7 @@ queue_name = 'get_historical'
 
 
 def publish(dict_data):
-    print(f'Publish queue: {queue_name}')
+    print(f'Send message to the queue: {queue_name}')
     channel.basic_publish(exchange='',
                           routing_key=queue_name,
                           body=dict_data)

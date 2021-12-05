@@ -201,7 +201,6 @@ def load_data_historical(dict_data):
                     if flag_debug == 1:
                         print("object_temp", object_temp.__dict__)
                     object_temp.save()
-                    print(f'object_temp: {object_temp}')
                     if flag_debug == 1:
                         print("Novo registro do %s salvo com sucesso, data %s" % (code_stock, date))
                 except Exception as e:
