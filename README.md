@@ -51,13 +51,13 @@ First, create the main stock microservices:
   Now, before create and deploy image, create .env file on root project. Set this variables:
   
   ```
-  SECRET_KEY=<generate securekey>
+  SECRET_KEY=<generate you key>
   DEBUG=True
   ALLOWED_HOSTS_DJANGO=127.0.0.1, localhost, .herokuapp.com
   DJANGO_SETTINGS_MODULE=stocks_microservices.settings
 
-  #URL TO ACCESS LOCAL DB
-  DATABASE_URL=<get on heroku site afeter create postgres instance>
+  #URL TO ACCESS DB
+  DATABASE_URL=<get on heroku site after create postgres instance>
 
   #RABBITMQ
   RABBITMQ_KEY=get on heroku site afeter create RabbiwMQ instance>
