@@ -52,7 +52,7 @@ First, create the main stock microservices:
   Now, before create and deploy image, create .env file on root project. Set this variables:
   
   ```
-  SECRET_KEY=<generate you key>
+  SECRET_KEY=<generate your key>
   DEBUG=True
   ALLOWED_HOSTS_DJANGO=127.0.0.1, localhost, .herokuapp.com
   DJANGO_SETTINGS_MODULE=stocks_microservices.settings
@@ -101,4 +101,4 @@ First, create the main stock microservices:
   ```
 
 
-Now, if you want, in you machine or inside heroku container, execute dataset_example/load_data.py (change const URL_BASE):
+If you want, in you machine or inside heroku container, execute dataset_example/load_data.py (change const URL_BASE):
