@@ -37,7 +37,7 @@ First, create the main stock microservices:
   heroku create stock-ms-yourname
   ```
 
-  Create add-ons database postgres:
+  Create add-on database postgres:
   ```
   heroku addons:create heroku-postgresql:hobby-dev -a stock-ms-pytrader
   ```
