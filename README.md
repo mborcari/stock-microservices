@@ -26,7 +26,7 @@ To aplication works, is need:
 
 Here, you will create main microsservices, database and rabbitmq. 
 
-Warning: Remember change tag "yourname"!.
+**Warning: Remember change tag "yourname" in this readme!.
 
 First, create the main stock microservices:
 
