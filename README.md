@@ -17,20 +17,21 @@ Login in Heroku and Docker in console.
 heroku login
 heroku container: login
 ```
-To aplication works, is need:
+
+To solution to work it is necessary:
 
 - 1x stock microservices. (https://github.com/mborcari/stock_microservices)
 - 2x stock etl microservices (https://github.com/mborcari/stock_etl_microservices)
 - 1x Postgres database instance.
 - 1x RabbitMQ instance.
 
-Here, you will create main microsservices, database and rabbitmq. 
+Here, you will create main microsservices, database and rabbitmq instance. 
 
 **Warning: Remember change tag "yourname" in this readme!.
 
-First, create the main stock microservices:
+First, create the main stock microsservices:
 
-  **Heroku commands to stock microservices:**
+  **Heroku commands to create stock microsservices:**
   
   Create app container:
   ```
@@ -47,9 +48,9 @@ First, create the main stock microservices:
   heroku addons:create cloudamqp:lemur -a stock-ms-pytrader
   ```
 
-  You will need get dabatabase and RabbitMQ credencials on Heroku site after create instance.
+You will need to obtain database and RabbitMQ credentials from the Heroku website after creating the instances.
   
-  Now, before create and deploy image, create .env file on root project. Set this variables:
+  Now, creating and deploying the image, create .env file on root project and define this variables:
   
   ```
   SECRET_KEY=<generate your key>
@@ -64,7 +65,7 @@ First, create the main stock microservices:
   RABBITMQ_KEY=get on heroku site after create RabbiwMQ instance>
   ```
  
-  Now, build image and deploy on Heroku app:
+  Now, building image and deploying it on Heroku app:
   ```
   docker build -f Dockerfile-heroku -t img_stock_ms .
   docker tag img_stock_ms registry.heroku.com/ stock-ms-yourname/web
@@ -73,7 +74,7 @@ First, create the main stock microservices:
   heroku ps:scale web=1 -a stock-ms-yourname
   ```
 
-  To see if the application ran, see log:
+To see if the application has run, see the log:
   ```
   heroku logs --tail -a  stock-ms-yourname
   ```
@@ -83,14 +84,14 @@ First, create the main stock microservices:
   heroku ps:restart web=1 -a stock-ms-yourname
   ```
 
-**Repeat process to stock queue microservices:**
+**Repeat this process to create stock queue microsservices:**
 
   Create app
   ```
   heroku create stock-ms-queue-yourname
   ```
 
-  Build and deploy image to Heroku
+  Building and deploying image to Heroku
   ```
   docker build -f Dockerfile-heroku-queue -t img_stock_ms_queue .
   docker tag img_stock_ms_queue registry.heroku.com/stock-ms-queue-yourname/worker
@@ -101,4 +102,4 @@ First, create the main stock microservices:
   ```
 
 
-If you want, in you machine or inside heroku container, execute dataset_example/load_data.py (change const URL_BASE):
+If desired, on your machine or inside heroku container, run dataset_example/load_data.py (change const URL_BASE):
