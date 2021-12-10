@@ -2,7 +2,7 @@
 
 Is a Django microservices project about Brazilian stocks.
 
-**Stack used:**
+**Stack of project:**
 
 - Use pyenv and virtualenv for management environment;
 - Docker and Docker-compose;
