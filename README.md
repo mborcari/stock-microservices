@@ -4,9 +4,9 @@ Is a Django microservices project about Brazilian stocks.
 
 **Stack of project:**
 
-- Use pyenv and virtualenv for management environment;
+- Pyenv and virtualenv for management environment;
 - Docker and Docker-compose;
-- Django, DjangoRest, Postgre, Pike, RabbitMq;
+- Django, DjangoRest, Postgres, Pike, RabbitMq;
 
 
 You will need install git, heroku and docker CLI.
