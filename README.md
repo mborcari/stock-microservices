@@ -1,6 +1,6 @@
 **Django stocks microservices**
 
-Is a Django microservices project about Brazilian stocks.
+Is a Django microservices project of the Brazilian stocks.
 
 **Stack of project:**
 
@@ -18,14 +18,14 @@ heroku login
 heroku container: login
 ```
 
-To solution to work it is necessary:
+To solution works, it is necessary:
 
 - 1x stock microservices. (https://github.com/mborcari/stock_microservices)
 - 2x stock etl microservices (https://github.com/mborcari/stock_etl_microservices)
 - 1x Postgres database instance.
 - 1x RabbitMQ instance.
 
-Here, you will create main microsservices, database and rabbitmq instance. 
+Here, you will create main microsservices, database and rabbitmq instances. 
 
 **Warning: Remember change tag "yourname" in this readme!.
 
